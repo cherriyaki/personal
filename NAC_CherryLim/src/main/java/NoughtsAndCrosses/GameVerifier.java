@@ -10,7 +10,7 @@ package NoughtsAndCrosses;
  * */
 
 public class GameVerifier {
-    private char[][] grid; // the grid we are verifying
+    private char[][] grid; // the grid we are verifying. grid[r][c] accesses the char at row r and column c.
     private int n; // length of grid
 
     /* Constructor
@@ -26,6 +26,7 @@ public class GameVerifier {
     }
 
     /*
+    * Gets all combinations of positions that win
     * @param n representing length of grid
     * @return array of groups containing grid positions that form a win
     * */
@@ -58,6 +59,7 @@ public class GameVerifier {
      * - 'X' if player placing X has won
      * - 'O' if player placing O has won
      * - 'U' if outcome of game is undecided
+     * NOTE: My class assumes the grid has either one winning player or none. If a grid with both X and O in winning positions is passed in, the first winning char detected will be returned in this method.
      * */
     public char checkState() {
         for (int[][] group : winningGroups()) {

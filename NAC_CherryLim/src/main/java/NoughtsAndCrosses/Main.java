@@ -17,24 +17,19 @@ public class Main {
             }
         }
         // verify
-        GameVerifier verifier = new GameVerifier(fillGrid(grid)); // test cases in fillGrid method
-        System.out.println(verifier.checkState());
+        GameVerifier verifier = new GameVerifier(fillGrid(grid)); // edit the grid in fillGrid method
+        System.out.println("Current board outcome: " + verifier.checkState());
     }
 
     /*
-    * TEST CASES
-    * Only uncomment one.
+    * Populate the grid
+    * - I've included an example case (X wins) in comments
+    * - grid[r][c] accesses the char at row r and column c.
     * */
     private static char[][] fillGrid(char[][] grid) {
-        // 1. X wins
-        grid[0][0] = grid[0][2] = grid[1][1] = grid[2][0] = 'X';
-        grid[0][1] = grid[1][0] = grid[2][2] = 'O';
-        // 2. O wins
-        /*grid[0][1] = grid[0][2] = grid[2][0] = 'X';
-        grid[1][0] = grid[1][1] = grid[1][2] = 'O';*/
-        // 3. Undecided
-        /*grid[0][1] = grid[0][2] = grid[1][0] = grid[1][1] = grid[2][2] = 'X';
-        grid[0][0] = grid[1][2] = grid[2][0] = grid[2][1] = 'O';*/
+        // EDIT GRID HERE
+        /*grid[0][0] = grid[0][2] = grid[1][1] = grid[2][0] = 'X';
+        grid[0][1] = grid[1][0] = grid[2][2] = 'O';*/
 
         return grid;
     }
